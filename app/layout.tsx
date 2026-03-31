@@ -1,7 +1,7 @@
 import { Geist, Geist_Mono, Raleway, IBM_Plex_Sans } from "next/font/google"
 
 import "./globals.css"
-import { ThemeProvider } from "@/components/theme-provider"
+import Navigation from "@/components/Navigation"
 import { cn } from "@/lib/utils";
 
 const ibmPlexSansHeading = IBM_Plex_Sans({subsets:['latin'],variable:'--font-heading'});
@@ -12,6 +12,12 @@ const fontMono = Geist_Mono({
   subsets: ["latin"],
   variable: "--font-mono",
 })
+
+export const metadata: Metadata = {
+  title: "ZayeedBooks",
+  description: 
+  "Penerbit Buku No 1 di Indonesia",
+};
 
 export default function RootLayout({
   children,
@@ -25,7 +31,8 @@ export default function RootLayout({
       className={cn("antialiased", fontMono.variable, "font-sans", raleway.variable, ibmPlexSansHeading.variable)}
     >
       <body>
-        <ThemeProvider>{children}</ThemeProvider>
+        <Navigation />
+        {children}
       </body>
     </html>
   )
