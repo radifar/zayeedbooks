@@ -1,4 +1,5 @@
 import { Geist, Geist_Mono, Raleway, IBM_Plex_Sans } from "next/font/google"
+import type { Metadata } from "next";
 
 import "./globals.css"
 import Navigation from "@/components/Navigation"
